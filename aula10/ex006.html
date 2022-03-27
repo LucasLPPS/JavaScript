@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: bold 20pt Arial;
+            background-color: aquamarine;
+            color: blueviolet;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--Caso eu use a estrutura convencional, ficaria da seguinte forma:
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    -->
+    <!--Porém, pra ficar menos poluído o código, fazer com a estrutura normal, e colocar as chamadas das funções em script-->
+    <div id="area">
+        Interaja...
+    </div>
+    <!--Alguns eventos ao interagir com o ponteiro do mouse:
+     ->> caso o ponteiro passe por cima da div - dispara mouseenter
+     ->> caso o ponteiro, já dentro da div, continue a se mover - dispara o mousemove
+     ->> caso ocorra o clique do mouse segurando -  dispara o mousedown
+     ->> e ao soltar o clique - dispara o mouseup 
+     ->> caso ocorra o clique rapidamente - dispara o click
+     ->> caso o ponteiro saia da área da div - dispara o mouseout
+    -->
+    <!-- Para disparar um evento, usa-se as funções. Elas estão em formato de código dentro de um bloco que só irão ocorrer quando o evento acontecer. Estrutura:
+        function ação() {
+            código
+        }
+    -->
+    <script>
+        // Colocando as chamadas das funções para a div.
+        var a = window.document.querySelector('div#area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            var a = window.document.querySelector('div#area')
+            a.innerText = "Clicou!"
+            a.style.background = "yellow"
+        }
+        function entrar(){
+            var a = window.document.querySelector('div#area')
+            a.innerText = "Entrou!"
+        }
+        function sair(){
+            var a = window.document.querySelector('div#area')
+            a.innerText = "Saiu!"
+            a.style.background = "aquamarine";
+        }
+    </script>
+
+</body>
+</html>

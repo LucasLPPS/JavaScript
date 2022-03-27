@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: rgb(58, 199, 152);
+        }
+        p {
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: yellow;
+            font: normal 20pt Arial; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição.</p>
+    <!--Tag para criação de scripts do JS-->
+    <script> 
+        /*
+        var n1 = window.prompt('Digite o primeiro número:') // recebe uma string
+        var n2 = window.prompt('Digite o segundo número:') // recebe uma string
+        var s = n1 + n2 // está concatenando duas strings
+        window.alert('A soma é ' + s) // nesse caso retornará não a soma, mas a junção de dois números
+        
+        Logo, seguindo a mesma linha de raciocínio do Python, devo indicar o tipo primitivo do dado:
+        */
+        var n1 = Number(window.prompt('Digite o primeiro número:')) 
+        // Number.parseFloat -> real
+        // Number.parseInt -> inteiro
+        // Se eu usar apenas Number, o JS irá identificar o tipo, se é int ou float, logo é o mais indicado.
+        var n2 = Number(window.prompt('Digite o segundo número:')) 
+        var s = n1 + n2 
+        // window.alert('A soma é ' + s) // forma onvencional
+        // forma mais adequada, usando template string:
+        window.alert(`A soma é ${s}`) // para usar, colocar texto entre ``
+        // para transformar a variável s em string, usar String(s).
+        // o comando s.toFixed(2) coloca o número com duas casas depois da vírgula
+        // o comando s.replace('.', ',') substitui o ponto por vírgula, semelhante ao Python.
+        // posso misturar os comandos tbm s.toFixed(2).replace('.', ',')
+        // comando mais complexo, porém bem importante:
+        // s.tolocateString('pt-BR', {style: 'currency', currency: 'BRL'}) -> estou dizendo para formatar a string, para localização brasileira com o tipo da moeda brasil real.
+    </script>
+</body>
+</html>

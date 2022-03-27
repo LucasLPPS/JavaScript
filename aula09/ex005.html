@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(40, 158, 119);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inciando estudos com DOM</h1>
+    <p>Aqui vai o resultado.</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique aqui.</div>
+    <!--DOM -> Document Object Model-->
+    <!-- Forma prática de acessar os elementos do projeto que estou desenvolvendo-->
+    <!-- Árvore DOM para o código acima:
+                       window
+            location  document  history   
+                        html
+                head           body
+            meta  title   h1 p    p    div
+                                strong       
+    -->
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1] // estou colocando dentro da variável p1 o elemento que está no primeiro parágrafo, especificado em [0] - primeiro elemento.
+
+        window.document.write("Texto do primeiro parágrafo: " + p1.innerText)
+        window.document.write("<br/>Texto do primeiro parágrafo com todas as formatações: " + p1.innerHTML)
+        p1.style.color = 'black'
+        
+        /*
+        var d = window.document.getElementById('msg')
+        d.style.backgroundColor = 'green'
+        d.innerText = "Novo texto."
+        */
+        // tbm poderia ter feito os dois comandos acima juntos:
+        /*
+        window.document.getElementById('msg').innerText = "Novo texto" -> não haveria necessidade de criar uma variável de controle. 
+        */
+        // mudando id = "msg" para name = "msg":
+        /*
+        var d = window.document.getElementsByName('msg')[0]
+        d.innerText = "Olá."
+        */
+        // além disso posso pegar por classe, caso eu mudasse para class = "msg"
+        // A forma mais usal, entretanto é essa:
+        var d = window.document.querySelector('div#msg') 
+        d.innerText = "Olá."
+        // O uso do querySelector ajuda no momento de fazer mudanças, já que se eu mudar de id para class, só precisaria mudar internamente a nomenclatura de div#msg para div.msg
+    </script>
+
+</body>
+</html>
