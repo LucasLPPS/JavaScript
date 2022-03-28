@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <p>Velocidade do carro:</p>
+    <input type="number" name="tvel" id="tvel">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <p id="res">Resultado</p>
+    <script>
+        function calcular() {
+            var vel = window.document.getElementById('tvel')
+            var vel2 = Number(vel.value)
+            var res = window.document.getElementById('res')
+            if (vel2 >= 80) {
+                res.innerText = `Sua velocidade foi ${vel2}Km/h, ultrapassando o máximo permitido de 80Km/h.`
+            }
+            else {
+            res.innerText = `Sua velocidade foi ${vel2}Km/h, não ultrapassando o máximo permitido de 80Km/h.`
+            }
+        }
+    </script>
+</body>
+</html>

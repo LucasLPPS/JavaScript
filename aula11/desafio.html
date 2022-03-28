@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <h2>Qual o país que você reside?</h2>
+    <p>Resposta:</p>
+    <input type="text" name="tnac" id="tnac">
+    <input type="button" value="Verificar" onclick="nacionalidade()">
+    <p id="res">Resultado</p>
+    <script>
+        function nacionalidade() {
+            var nac = window.document.getElementById('tnac')
+            var nac2 = nac.value // lembrar de sempre usar o var.value para pegar o valor interno que foi digitado, não se limita apenas a números.
+            var res = window.document.getElementById('res')
+            if (nac2 == 'Brasil') {
+                res.innerHTML = `Você mora em ${nac2}, logo é Brasileiro.`
+            }
+            else {
+                res.innerHTML = `Você mora em ${nac2}, logo é Estrangeiro.`
+            }
+        // Outra forma de estrutura condicional é usando o switch, para situações pontuais, mas que se acontecerem, inviabiliza o uso de if, ou irá ser demasiado extenso:
+        /* switch (valor) {
+               case valor1:
+                   comandos
+                   break
+               case valor2:
+                   comandos
+                   break
+               case valor3:
+                   comandos
+                   break
+               case Default:
+                   comandos
+                   break
+        }
+        */ 
+        }
+    </script>
+
+</body>
+</html>
